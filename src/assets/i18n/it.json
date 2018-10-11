@@ -1,5 +1,17 @@
 {
   "HELLO": "hola",
-  "DIETS": "Diete"
-
+  "DIETS": "Diete",
+  "MEALS" : "Pasti",
+  "Pages": "Pagine",
+  "ex" : "es",
+  "PlaceholderDietNameEx": "La mia prima dieta",
+  "PlaceholderDietStartDateEx": "22/10/2018",
+  "PlaceholderDietDurationEx": "6 settimane",
+  "PlaceholderDietGoalEx" : "Aumentare la massa muscolare",
+  "LabelDietName": "Nome",
+  "LabelDietDuration": "Durata, in settimane",
+  "LabelDietGoal": "Obbiettivo",
+  "LabelDietStartDate" : "Data di inizio",
+  "AddDiet": "Aggiungi dieta",
+  "MyDiets" : "Le mie diete"
 }

@@ -6,3 +6,44 @@
     <ion-title> {{'DIETS' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>{{'LabelDietName' | translate}}</ion-label>
+    <ion-input [(ngModel)]="diet.name" placeholder="{{'ex' | translate}}: {{'PlaceholderDietNameEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelDietDuration' | translate}}</ion-label>
+    <ion-input type="number" [(ngModel)]="diet.duration" placeholder="{{'ex' | translate}}: {{'PlaceholderDietDurationEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelDietGoal' | translate}}</ion-label>
+    <ion-input [(ngModel)]="diet.goal" placeholder="{{'ex' | translate}}: {{'PlaceholderDietGoalEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelDietStartDate' | translate}}</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="diet.start_date" placeholder="{{'ex' | translate}}: {{'PlaceholderDietStartDateEx' | translate}}"></ion-datetime>
+  </ion-item>
+  <button ion-button full (click)="addDiet()">{{'AddDiet' | translate}}</button>
+  <ion-list>
+    <ion-list-header>
+      {{'MyDiets' | translate}}
+    </ion-list-header>
+    <ion-item *ngFor="let dt of diets">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{ dt.name }}</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+              {{'LabelDietGoal' | translate}}: {{ dt.goal }} <br/>
+              {{'LabelDietGoal' | translate}}: {{ dt.duration }}  <br/>
+              {{'LabelDietStartDate' | translate}}: {{ dt.start_date }}
+            </p>
+            <button ion-button icon-only (click)="openMeals(dt.id)"><ion-icon name="construct"></ion-icon></button>
+            <button ion-button icon-only (click)="deleteDiet(dt.id)"><ion-icon name="trash"></ion-icon></button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

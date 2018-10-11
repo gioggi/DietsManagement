@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { Diets } from '../pages/diets/diets';
-
+import { MealsPage } from '../pages/meals/meals';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 

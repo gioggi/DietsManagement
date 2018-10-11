@@ -1,4 +1,16 @@
 {
   "HELLO": "hola",
-  "DIETS": "Diets"
+  "DIETS": "Diets",
+  'PAGES': 'Pages',
+  "ex" : "ex",
+  "PlaceholderDietNameEx": "Pippo",
+  "PlaceholderDietStartDateEx": "10/22/2018",
+  "PlaceholderDietDurationEx": "6 weeks",
+  "PlaceholderDietGoalEx" : "Increase the mass",
+  "LabelDietName": "Name",
+  "LabelDietDuration": "Duration, in weeks",
+  "LabelDietGoal": "Goal",
+  "LabelDietStartDate" : "Start date",
+  "AddDiet": "Add diet",
+  "MyDiets" : "My diet"
 }
