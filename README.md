@@ -1,12 +1,10 @@
 # DietsManagement
 ## How to
-### Clona the repo
+### Clon the repo
 ```
-cd DietsManagement
-npm i -g ionic
-npm i
+git clone https://github.com/gioggi/DietsManagement.git
 ```
-### Install Node [NODE](https://nodejs.org/en/)
+### Install [NODE](https://nodejs.org/en/)
 ### Install or update  dependencies
 ```
 cd DietsManagement
