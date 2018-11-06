@@ -1,13 +1,13 @@
 import { DietsProvider } from '../../providers/diets/diets';
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
-import {MealsPage} from "../meals/meals";
+import {DietDaysPage} from "../diet-days/diet-days";
 
 @Component({
   selector: 'page-diets',
   templateUrl: 'diets.html'
 })
-export class Diets {
+export class DietsPage {
 
   diet = {};
   diets = [];
@@ -29,12 +29,9 @@ export class Diets {
   addDiet() {
     this.dietsprovider.addDiet(this.diet['name'], parseInt(this.diet['duration']), this.diet['goal'], this.diet['start_date'])
       .then(data => {
-        this.loadDietsData();
-        this.openPage(MealsPage);
+         this.loadDietsData();
+         this.navCtrl.push(DietDaysPage, {diet_id: this.diet['id']});
       });
-    this.diet = {
-
-    };
   }
   openPage(page) {
     this.navCtrl.push(page, {});
@@ -45,8 +42,8 @@ export class Diets {
     this.loadDietsData();
   }
 
-  openMeals(id){
-    this.navCtrl.push(MealsPage, {meals_id: id});
+  openDietDays(id){
+    this.navCtrl.push(DietDaysPage, {diet_id: id});
   }
 
 }

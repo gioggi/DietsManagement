@@ -6,9 +6,10 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
-import { Diets } from '../pages/diets/diets';
+import { DietsPage } from '../pages/diets/diets';
 import { MealsPage } from '../pages/meals/meals';
-
+import { DietDaysPage } from '../pages/diet-days/diet-days';
+import { MealOptionsPage } from "../pages/meal-options/meal-options";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -26,6 +27,8 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { DietsProvider } from '../providers/diets/diets';
 import { DietDaysProvider } from '../providers/diet-days/diet-days';
+import { MealsProvider } from '../providers/meals/meals';
+import { MealOptionsProvider } from '../providers/meal-options/meal-options';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -37,8 +40,10 @@ export function createTranslateLoader(http: HttpClient) {
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    Diets,
-    MealsPage
+    DietsPage,
+    MealsPage,
+    DietDaysPage,
+    MealOptionsPage
   ],
   imports: [
     BrowserModule,
@@ -60,8 +65,10 @@ export function createTranslateLoader(http: HttpClient) {
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    Diets,
-    MealsPage
+    DietsPage,
+    MealsPage,
+    DietDaysPage,
+    MealOptionsPage
   ],
   providers: [
     StatusBar,
@@ -71,7 +78,9 @@ export function createTranslateLoader(http: HttpClient) {
     SQLitePorter,
     SQLite,
     DietsProvider,
-    DietDaysProvider
+    DietDaysProvider,
+    MealsProvider,
+    MealOptionsProvider
   ]
 })
 export class AppModule {}

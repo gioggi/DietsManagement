@@ -1,18 +1,24 @@
-<!--
-  Generated template for the DietDaysPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>diet_days</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{'DAYS' | translate}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let dd of dietdays">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{numberToWeek(dd.w_day) | translate}}  <button ion-button icon-only (click)="openMeals(dd.id)"><ion-icon name="construct"></ion-icon></button></h2>
+        </ion-card-header>
+        <ion-card-content>
 
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
+

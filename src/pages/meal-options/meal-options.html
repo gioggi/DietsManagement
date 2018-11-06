@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{'MEALSOPTIONS' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>{{'LabelMealOptionOptionName' | translate}}</ion-label>
+    <ion-input [(ngModel)]="mealoption.name" placeholder="{{'ex' | translate}}: {{'PlaceholderMealOptionNameEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelMealOptionFood' | translate}}</ion-label>
+    <ion-input [(ngModel)]="mealoption.food" placeholder="{{'ex' | translate}}: {{'PlaceholderMealOptionFoodEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelMealOptionQuantity' | translate}}</ion-label>
+    <ion-input type="number"  [(ngModel)]="mealoption.quantity" placeholder="{{'ex' | translate}}: {{'PlaceholderMealOptionQuantityEx' | translate}}"></ion-input>
+  </ion-item>
+  <button ion-button full (click)="addMealOption()">{{'AddMealOption' | translate}}</button>
+  <ion-list>
+    <ion-list-header>
+      {{'MyMealOptions' | translate}}
+    </ion-list-header>
+    <ion-item *ngFor="let mo of mealoptions">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{ mo.name }}</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            {{'LabelMealOptionFood' | translate}}: {{ mo.food }} <br/>
+            {{'LabelMealOptionQuantity' | translate}}: {{ mo.quantity }}  <br/>
+          </p>
+          <button ion-button icon-only (click)="deleteMealOption(mo.id)"><ion-icon name="trash"></ion-icon></button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

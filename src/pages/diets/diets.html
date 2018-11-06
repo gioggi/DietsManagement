@@ -40,7 +40,7 @@
               {{'LabelDietGoal' | translate}}: {{ dt.duration }}  <br/>
               {{'LabelDietStartDate' | translate}}: {{ dt.start_date }}
             </p>
-            <button ion-button icon-only (click)="openMeals(dt.id)"><ion-icon name="construct"></ion-icon></button>
+            <button ion-button icon-only (click)="openDietDays(dt.id)"><ion-icon name="construct"></ion-icon></button>
             <button ion-button icon-only (click)="deleteDiet(dt.id)"><ion-icon name="trash"></ion-icon></button>
         </ion-card-content>
       </ion-card>

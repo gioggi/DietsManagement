@@ -10,19 +10,25 @@ import { DatabaseProvider } from '../database/database';
 @Injectable()
 export class DietsProvider {
 
-  constructor(public http: HttpClient, private  databaseprovider: DatabaseProvider) {
+  constructor(public http: HttpClient, public  databaseprovider: DatabaseProvider) {
     console.log('Hello DietsProvider Provider');
   }
 
-
   addDiet(name, duration, goal, start_date) {
-    let data = [name, duration, goal, start_date]
-    return this.databaseprovider.database.executeSql("INSERT INTO diets (name, duration, goal, start_date) VALUES (?, ?, ?, ?)", data).then(data => {
-      return data;
-    }, err => {
-      console.log('Error: ', err);
-      return err;
-    });
+    let data = [name, duration, goal, start_date];
+    return this.databaseprovider.database.executeSql("INSERT INTO diets (name, duration, goal, start_date) VALUES (?, ?, ?, ?);", data).then(
+      () => {return  this.databaseprovider.database.executeSql('SELECT id FROM diets ORDER BY id DESC', []);}
+    ).then(
+      (resultSet) => {
+        for(let i=0; i < 7; i++){
+          let ff = [i,parseInt(resultSet.rows.item(0).id)];
+          this.databaseprovider.database.executeSql("INSERT INTO diet_days (w_day, diet_id) VALUES (?, ?);", ff);
+        }
+      }).catch(
+      (error) => {
+        console.error("db error", error.message);
+      }
+    );
   }
 
   getAllDiets() {
@@ -41,10 +47,12 @@ export class DietsProvider {
   }
 
   deleteDiet(id) {
-    let data = [id];
-    return this.databaseprovider.database.executeSql("DELETE FROM diets where id = ?", data).then(res => {console.log('Success: ', res);},err => {
-      console.log('Error: ', err);
-      return err;
-    });
+    let diet_id = [id];
+    this.databaseprovider.database.executeSql("DELETE FROM diets where id = ? ",diet_id);
+    return this.databaseprovider.database.executeSql("DELETE FROM diet_days where diet_id = ?",diet_id)
+      .then(res => {console.log('Success: ', res.message);},err => {
+        console.log('Error deleteDiet: ', err.message);
+        return err;
+      });
   }
 }

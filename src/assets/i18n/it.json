@@ -1,6 +1,7 @@
 {
   "HELLO": "hola",
   "DIETS": "Diete",
+  "DAYS": "Giorni",
   "MEALS" : "Pasti",
   "Pages": "Pagine",
   "ex" : "es",
@@ -12,6 +13,18 @@
   "LabelDietDuration": "Durata, in settimane",
   "LabelDietGoal": "Obbiettivo",
   "LabelDietStartDate" : "Data di inizio",
+  "PlaceholderMealNameEx": "Nome del pasto",
+  "PlaceholderMealOptionFoodEx": "Manzo, maiale",
+  "PlaceholderMealOptionNameEx": "Carne",
+  "PlaceholderMealOptionQuantityEx" : "70",
+  "LabelMealName": "Nome",
+  "LabelMealStartTime": "Inizio del pasto",
+  "LabelMealEndTime": "Fine del pasto",
+  "LabelMealOptionName" : "Nome opzione",
   "AddDiet": "Aggiungi dieta",
-  "MyDiets" : "Le mie diete"
+  "MyDiets" : "Le mie diete",
+  "AddMeal": "Aggiungi pasto",
+  "MyMeals" : "I miei pasti",
+  "AddMealOption": "Aggiungi opzione al pasto",
+  "MyMealOptions" : "Opzioni del pasto"
 }

@@ -1,7 +1,3 @@
-CREATE TABLE IF NOT EXISTS developer(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,skill TEXT,yearsOfExperience INTEGER);
-INSERT INTO developer(name, skill, yearsOfExperience) VALUES ('Simon', 'Ionic', '4');
-INSERT INTO developer(name, skill, yearsOfExperience) VALUES ('Jorge', 'Firebase', '2');
-INSERT INTO developer(name, skill, yearsOfExperience) VALUES ('Max', 'Startup', '5');
 CREATE TABLE IF NOT EXISTS  diets(
   id     INTEGER PRIMARY KEY AUTOINCREMENT,
   name   TEXT NOT NULL,
@@ -18,10 +14,12 @@ CREATE TABLE IF NOT EXISTS  diet_days(
 CREATE TABLE IF NOT EXISTS  meals(
   id     INTEGER PRIMARY KEY AUTOINCREMENT,
   name   TEXT NOT NULL,
+  start_time TIMESTAMP NOT NULL,
+  end_time TIMESTAMP NULL,
   diet_day_id  INTEGER NOT NULL,
   FOREIGN KEY(diet_day_id) REFERENCES diet_days(id)
 );
-CREATE TABLE IF NOT EXISTS  meal_components(
+CREATE TABLE IF NOT EXISTS  meal_options(
   id     INTEGER PRIMARY KEY AUTOINCREMENT,
   name   TEXT NOT NULL,
   food   TEXT NOT NULL,

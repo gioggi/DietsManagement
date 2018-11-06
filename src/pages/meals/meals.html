@@ -7,7 +7,38 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-item>
+    <ion-label stacked>{{'LabelMealName' | translate}}</ion-label>
+    <ion-input [(ngModel)]="meal.name" placeholder="{{'ex' | translate}}: {{'PlaceholderMealNameEx' | translate}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelMealStartTime' | translate}}</ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="meal.start_time" placeholder="{{'ex' | translate}}: {{'PlaceholderMealStartTimeEx' | translate}}"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>{{'LabelMealEndTime' | translate}}</ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="meal.end_time" placeholder="{{'ex' | translate}}: {{'PlaceholderMealStartTimeEx' | translate}}"></ion-datetime>
+  </ion-item>
+  <button ion-button full (click)="addMeal()">{{'AddMeal' | translate}}</button>
+  <ion-list>
+    <ion-list-header>
+      {{'MyMeals' | translate}}
+    </ion-list-header>
+    <ion-item *ngFor="let ml of meals">
+      <ion-card>
+        <ion-card-header>
+          <h2>{{ ml.name }}</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            {{'LabelMealStartTime' | translate}}: {{ ml.start_time }} <br/>
+            {{'LabelMealEndTime' | translate}}: {{ ml.end_time }}  <br/>
+          </p>
+          <button ion-button icon-only (click)="openMealOptions(ml.id)"><ion-icon name="construct"></ion-icon></button>
+          <button ion-button icon-only (click)="deleteMeal(ml.id)"><ion-icon name="trash"></ion-icon></button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
