@@ -2,13 +2,13 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>{{'Pages' | translate}}</ion-title>
+      <ion-title>{{'Menu' | translate}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        {{p.title | translate}}
       </button>
     </ion-list>
   </ion-content>

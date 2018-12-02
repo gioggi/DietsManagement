@@ -32,8 +32,8 @@
         </ion-card-header>
         <ion-card-content>
           <p>
-            {{'LabelMealStartTime' | translate}}: {{ ml.start_time }} <br/>
-            {{'LabelMealEndTime' | translate}}: {{ ml.end_time }}  <br/>
+            {{'LabelMealStartTime' | translate}}: {{ ml.start_hour }}:{{ ml.start_minutes }}<br/>
+            {{'LabelMealEndTime' | translate}}: {{ ml.end_hour}}:{{ ml.end_minutes}} <br/>
           </p>
           <button ion-button icon-only (click)="openMealOptions(ml.id)"><ion-icon name="construct"></ion-icon></button>
           <button ion-button icon-only (click)="deleteMeal(ml.id)"><ion-icon name="trash"></ion-icon></button>

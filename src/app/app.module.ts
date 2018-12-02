@@ -12,6 +12,7 @@ import { DietDaysPage } from '../pages/diet-days/diet-days';
 import { MealOptionsPage } from "../pages/meal-options/meal-options";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DashboardPage } from "../pages/dashboard/dashboard";
 
 //storage
 import { IonicStorageModule } from '@ionic/storage';
@@ -29,6 +30,7 @@ import { DietsProvider } from '../providers/diets/diets';
 import { DietDaysProvider } from '../providers/diet-days/diet-days';
 import { MealsProvider } from '../providers/meals/meals';
 import { MealOptionsProvider } from '../providers/meal-options/meal-options';
+import { DashboardProvider } from '../providers/dashboard/dashboard';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -43,7 +45,8 @@ export function createTranslateLoader(http: HttpClient) {
     DietsPage,
     MealsPage,
     DietDaysPage,
-    MealOptionsPage
+    MealOptionsPage,
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ export function createTranslateLoader(http: HttpClient) {
     DietsPage,
     MealsPage,
     DietDaysPage,
-    MealOptionsPage
+    MealOptionsPage,
+    DashboardPage
   ],
   providers: [
     StatusBar,
@@ -77,6 +81,7 @@ export function createTranslateLoader(http: HttpClient) {
     DatabaseProvider,
     SQLitePorter,
     SQLite,
+    DashboardProvider,
     DietsProvider,
     DietDaysProvider,
     MealsProvider,

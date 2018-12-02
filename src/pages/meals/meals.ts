@@ -28,11 +28,10 @@ export class MealsPage {
   }
 
   addMeal() {
-    console.log(this.navParams.get('diet_day_id'));
     this.mealsprovider.addMeal(this.meal['name'], this.meal['start_time'], this.meal['end_time'],this.navParams.get('diet_day_id'))
       .then(data => {
         this.loadMealsData();
-        this.navCtrl.push(MealOptionsPage, {meal_id: this.meal['id']});
+        this.navCtrl.push(MealOptionsPage, {meal_id: data});
       });
   }
 

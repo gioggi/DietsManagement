@@ -29,7 +29,7 @@ export class MealOptionsProvider {
         }
       }
       return mealoptions;
-    }, err => {
+    }, (err) => {
       console.log('Error getAllMeals: ', err.message);
       return [];
     });

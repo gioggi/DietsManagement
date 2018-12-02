@@ -14,9 +14,12 @@ CREATE TABLE IF NOT EXISTS  diet_days(
 CREATE TABLE IF NOT EXISTS  meals(
   id     INTEGER PRIMARY KEY AUTOINCREMENT,
   name   TEXT NOT NULL,
-  start_time TIMESTAMP NOT NULL,
-  end_time TIMESTAMP NULL,
+  start_hour INTEGER NOT NULL,
+  start_minutes INTEGER NOT NULL,
+  end_hour INTEGER NULL,
+  end_minutes INTEGER NULL,
   diet_day_id  INTEGER NOT NULL,
+  send_notificaton INTEGER(1) NOT NULL DEFAULT(0),
   FOREIGN KEY(diet_day_id) REFERENCES diet_days(id)
 );
 CREATE TABLE IF NOT EXISTS  meal_options(

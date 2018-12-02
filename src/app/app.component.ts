@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { DietsPage } from '../pages/diets/diets';
+import { DashboardPage } from "../pages/dashboard/dashboard";
 import { MealsPage } from '../pages/meals/meals';
 import { DietDaysPage } from '../pages/diet-days/diet-days';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,7 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = DietsPage;
+  rootPage = DashboardPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -33,7 +34,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Le mie diete', component: DietsPage }
+      { title: 'Dashboard', component: DashboardPage },
+      { title: 'MyDiets', component: DietsPage }
     ];
   }
 
